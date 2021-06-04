@@ -1,0 +1,15 @@
+exports.up = function (knex) {
+  return knex.schema.createTable("aports", (table) => {
+    table.string("id").notNullable();
+    table.string("cashier_id").notNullable();
+    table.decimal("aport").notNullable();
+    table.date("dateAport").notNullable();
+    table.integer("authorization_id").notNullable();
+    table.string("authorization_name").notNullable();
+    table.integer("authorization_type").notNullable();
+  });
+};
+
+exports.down = function (knex) {
+  return knex.schema.dropTable("aports");
+};
